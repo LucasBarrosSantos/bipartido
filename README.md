@@ -1,8 +1,8 @@
 # Projeto Bipartido
 * Projeto com o intuito de reconhecer uma Matriz de Adjacência do Grafo, afim de dizer se esse Grafo é ou não um Grafo Bipartido. 
 
-* Um Grafo é bipartido
- - é o grafo cujos vértices podem ser divididos em dois conjuntos, nos quais não há arestas entre vértices de um mesmo conjunto. Para um grafo ser bipartido ele não pode conter circuitos de comprimento ímpar.
+* Característica do Grafocbipartido:
+ - É o grafo cujos vértices podem ser divididos em dois conjuntos, nos quais não há arestas entre vértices de um mesmo conjunto. Para um grafo ser bipartido ele não pode conter circuitos de comprimento ímpar.
 
 # Autor 
 * Lucas Barros Santos. Aluno do curso de Ciência da Computação - FACAPE - Petrolina-PE
