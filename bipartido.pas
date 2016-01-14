@@ -51,7 +51,7 @@ function testeG2 (x:integer): boolean;
         end;
    end;
 
-{FunÁ„o de busca do Grupo 1, recebe como parametro o vÈrtice}
+{Fun√ß√£o de busca do Grupo 1, recebe como parametro o v√©rtice}
 {Encontrar os verteces do Grupo 1}
 
 FUNCTION buscaG1(v : integer):boolean;
@@ -64,13 +64,13 @@ begin
          if(G1[c] = v)then
          begin
                   buscaG1 := true;
-                 // break; // Se achou no Grupo 1, ent„o sai do While();
+                 // break; // Se achou no Grupo 1, ent√£o sai do While();
          end;
          c := c + 1;
      end;
 end;
 
-{FunÁ„o de busca do Grupo 2, recebe como parametro o vÈrtice}
+{Fun√ß√£o de busca do Grupo 2, recebe como parametro o v√©rtice}
 {Encontrar os verteces do grupo 2}
 FUNCTION buscaG2(v : integer):boolean;
      var c : integer;
@@ -82,13 +82,13 @@ begin
          if(G2[c] = v)then
          begin
                   buscaG2 := true;
-                  //break; // Se achou no G2, et„o sai do While();
+                  //break; // Se achou no G2, et√£o sai do While();
          end;
          c := c + 1;
       end;
 end;
 
-{FunÁ„o de inserir no Grupo 1, recebe como parametro o vÈrtice}
+{Fun√ß√£o de inserir no Grupo 1, recebe como parametro o v√©rtice}
 FUNCTION inserirG1(v : integer):boolean;
      var c : integer;
 Begin
@@ -97,13 +97,13 @@ Begin
       begin
          if (not(buscaG1(v)) and not(buscaG2(v)) and (G1[c] = -1) and (not testeg1(v)))then
            begin
-                G1[c] := v; // Se n„o achar em nenhum incere em G1[indice];
+                G1[c] := v; // Se n√£o achar em nenhum incere em G1[indice];
            end;
            c := c + 1;
       end;
 end;
 
-{FunÁ„o de inserir no Grupo 2, recebe como parametro o vÈrtice}
+{Fun√ß√£o de inserir no Grupo 2, recebe como parametro o v√©rtice}
 FUNCTION inserirG2(v : integer):boolean;
      var c : integer;
 Begin
@@ -141,7 +141,7 @@ aux1 := 1;
           nomearquivo := concat(nomearquivo,'.txt');
           if Fsearch (nomearquivo,'') <> '' then {Procurar arquivo no caminho de pesquisa.}
           begin
-               arqok := true;   {Existencia ou n„o de arquivo nesse caso sim}
+               arqok := true;   {Existencia ou n√£o de arquivo nesse caso sim}
                writeln('Arquivo localizado com sucesso!');
                readkey;
                clrscr;
@@ -156,12 +156,12 @@ aux1 := 1;
      for j := 1 to 100 do
      MAdjacencia [i,j] := 0;
 
-     writeln('Trabalho dos alunos: Lucas Barros e Wellington Franklin');
+     writeln('Trabalho do aluno: Lucas Barros');
      writeln(' ');
      writeln('Matriz de Adjacencia do Grafo no arquivo:');
      writeln(' ');
 
-     assign (arquivo, nomearquivo); {Associa o arquivo texto onde t· o grafo com o nome do arquivo}
+     assign (arquivo, nomearquivo); {Associa o arquivo texto onde t√° o grafo com o nome do arquivo}
      reset (arquivo);         {Reinicia e abre  um arquivo existente para leitura}
 
      snumero := '';
@@ -180,7 +180,7 @@ aux1 := 1;
           end
           else
           begin
-               val (snumero,inumero,erro); {Val converte o valor representado na string S para um valor numÈrico ou
+               val (snumero,inumero,erro); {Val converte o valor representado na string S para um valor num√©rico ou
                                                      um valor enumerado}
 
                if (erro <> 0) and (auxarq <> chr(10)) then
@@ -214,7 +214,7 @@ aux1 := 1;
           end;          {do if}
      end;               {do while eof}
 
-     val (snumero,inumero,erro);    {Val converte o valor representado na string S para um valor numÈrico ou
+     val (snumero,inumero,erro);    {Val converte o valor representado na string S para um valor num√©rico ou
                                                      um valor enumerado}
 
           if (erro <> 0) and (auxarq <> chr(10))then
@@ -238,29 +238,29 @@ aux1 := 1;
      textcolor(Red);
      writeln('-----------------------------');
      writeln;
-     {Inicializamos nossos grupos com -1, ou seja, n„o est„o em nenhum grupo}
+     {Inicializamos nossos grupos com -1, ou seja, n√£o est√£o em nenhum grupo}
      for i:= 1 to n do
      begin
-         G1[i] := -1; // Assim n„o estar· em nenhum dos Grupos
-         G2[i] := -1; // Assim n„o estar· em nenhum dos Grupos
+         G1[i] := -1; // Assim n√£o estar√° em nenhum dos Grupos
+         G2[i] := -1; // Assim n√£o estar√° em nenhum dos Grupos
      end;
 
 
-     {Inicializamos nosso G1 com o vÈrtice 0}
+     {Inicializamos nosso G1 com o v√©rtice 0}
      G1[1] := 0;
      for i:= 1 to n do
        begin
          for j:= 1 to n do
          begin
-             if(MAdjacencia [i,j] = 1) then   {testamos se h· ligaÁıes no vÈrtice i}
+             if(MAdjacencia [i,j] = 1) then   {testamos se h√° liga√ß√µes no v√©rtice i}
              begin
-                 if((buscaG1(i) = true) and (buscaG2(i) = false))then {testamos se j· existe o vÈrtice no grupo 1, e inserimos no grupo 2}
+                 if((buscaG1(i) = true) and (buscaG2(i) = false))then {testamos se j√° existe o v√©rtice no grupo 1, e inserimos no grupo 2}
                                inserirG2(j)
                  else
-                 if (buscaG1(i) = false) and (buscaG2(i) = true) then {testamos se j· existe o vÈrtice no grupo 2, e inserimos no grupo 1}
+                 if (buscaG1(i) = false) and (buscaG2(i) = true) then {testamos se j√° existe o v√©rtice no grupo 2, e inserimos no grupo 1}
                                inserirG1(j)
                  else
-                 if (buscaG1(i) = false) and (buscaG2(i) = false) then {testamos se È desconexo, e inserimos no grupo 2}
+                 if (buscaG1(i) = false) and (buscaG2(i) = false) then {testamos se √© desconexo, e inserimos no grupo 2}
                                inserirG2(j)
                  else
                  if not(buscaG1(i)) and not(buscaG2(i)) then
@@ -269,7 +269,7 @@ aux1 := 1;
          end; // FimFor
        end; // FimFor
 
-     {Testando se È ou n„o bipartido}
+     {Testando se √© ou n√£o bipartido}
 
    aux1 := 1;
    While (aux1 <= n) do
@@ -277,15 +277,15 @@ aux1 := 1;
        if (TesteG1(aux1) and (TesteG2(aux1))) then // Testa se existe toques de um vertice nele mesmo ou
         begin                                      // em algum outro vertice do mesmo Grupo!
 
-            aux := 1; // Se os dois testes forem Verdade, ent„o o Grafo n„o È Bipartido! Pois ‡ toque em algum dos vertices no mesmo Grupo
+            aux := 1; // Se os dois testes forem Verdade, ent√£o o Grafo n√£o √© Bipartido! Pois √† toque em algum dos vertices no mesmo Grupo
 
         end;
        aux1 := aux1 + 1;
      end;
 
-     {Testando se o retorno da busca È verdadeiro para existencia de vertices iguais nos dois grupos}
+     {Testando se o retorno da busca √© verdadeiro para existencia de vertices iguais nos dois grupos}
      if (aux = 1) then
-         if(N = 2) and (M = 1) then  // CodiÁ„o para o grafo K2 que È Bipartido Completo
+         if(N = 2) and (M = 1) then  // Codi√ß√£o para o grafo K2 que √© Bipartido Completo
           begin
               G1[1] := 1;
               G2[1] := 2;
